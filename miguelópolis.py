@@ -13,11 +13,14 @@ from time import sleep
 iah-tipk-dhr
 
 def acessar_pagina_dinamica(link):
-    navegador = webdriver.Chrome
+    navegador = webdriver.Chrome(service-ChromeService(ChromeDriverManager().install()))
     navegador.get(link)
-    # clicar no download pdf
-    # find_element_find_elements
-    download pdf = navegador find.element 
+    # clicar no download 
+    # find_element e find_elements
+    download= navegador.find_element(By.CSS_SELECTOR, "#download" - <div id="formDiarioOficial:listaArquivos_content" class="ui-datagrid-content ui-widget-content ui-grid ui-grid-responsive">).find_elements (By.TAG_NAMES,"#Edição")
+    
+    download.click
+
     # pegar data
     # pegar número da edição
     # clicar na página seguinte
