@@ -10,21 +10,29 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
-iah-tipk-dhr
+#iah-tipk-dhr
 
 def acessar_pagina_dinamica(link):
-    navegador = webdriver.Chrome(service-ChromeService(ChromeDriverManager().install()))
+    navegador = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
     navegador.get(link)
     # clicar no download 
     # find_element e find_elements
-    download= navegador.find_element(By.CSS_SELECTOR, "#download" - <div id="formDiarioOficial:listaArquivos_content" class="ui-datagrid-content ui-widget-content ui-grid ui-grid-responsive">).find_elements (By.TAG_NAMES,"#Edição")
-    
-    download.click
+    lista_data= navegador.find_elements(By.XPATH,"//span [@class='font-weight-light text-dark']")
+    print(len(lista_data))
+    for diario in lista_data: 
+        
+        # pegar data e quantidade de páginas
+        data = diario
+        print (data.text)
+        # pegar número da edição e ano.
+    lista_edição= navegador.find_elements (By.XPATH,"//*[@id='formDiarioOficial:listaArquivos_content']/div[1]/div[1]/div/div/div/div/div[1]/div/h4[1]")
+    for edição in lista_edição
 
-    # pegar data
-    # pegar número da edição
-    # clicar na página seguinte
+        # regular ou extraordinária
+        #lista_diarios= navegador.find_element (By.XPATH,"//*[@id='formDiarioOficial:listaArquivos_content']/div[1]/div[1]/div/div/div/div/div[1]/div/h4[2]")
     
+        # clicar na página seguinte
+        #lista_diarios= navegador.find_element (By.XPATH,"//*[@id='formDiarioOficial:listaArquivos_paginator_bottom']/span[1]/a[1]")
 
 def main():
     link = "https://www.miguelopolis.sp.gov.br/paginas/portal/diarioOficial"
