@@ -25,10 +25,18 @@ def acessar_pagina_dinamica(link):
         data = diario
         print (data.text)
         # pegar número da edição e ano.
-    lista_edição= navegador.find_elements (By.XPATH,"//*[@id='formDiarioOficial:listaArquivos_content']/div[1]/div[1]/div/div/div/div/div[1]/div/h4[1]")
-    for edição in lista_edição
-
+    lista_edição= navegador.find_elements (By.XPATH, "//span [@class='h4 class=mb-0']")
+    for diario in lista_edição:
+        print (diario)
+        
+        
         # regular ou extraordinária
+    lista_tipo = navegador.find_elements (By.XPATH, "//span [@class= 'h4 class=mt-0']")
+    for diario in lista_tipo:
+        print (diario)
+        
+        
+
         #lista_diarios= navegador.find_element (By.XPATH,"//*[@id='formDiarioOficial:listaArquivos_content']/div[1]/div[1]/div/div/div/div/div[1]/div/h4[2]")
     
         # clicar na página seguinte
